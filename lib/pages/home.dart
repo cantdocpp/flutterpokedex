@@ -35,26 +35,29 @@ class _PokemonListState extends State<PokemonList> {
     Map pokemonData = pokemonInstance.data;
     List pokemonDataResult = pokemonData['results'];
     pokemonLists = pokemonDataResult;
-    print(pokemonLists);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
-      child: Expanded(
-        child: ListView.builder(
-          itemCount: pokemonLists.length,
-          itemBuilder: (context, index) {
-            return FlatButton(
-              onPressed: () {
-                print('tes');
-              },
-              child: Text('${pokemonLists[index]['name']}'),
-            );
-          },
-        ),
-      ),
-    );
+        padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: pokemonLists.length,
+                itemBuilder: (context, index) {
+                  return FlatButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/detail',
+                          arguments: {'url': pokemonLists[index]['url']});
+                    },
+                    child: Text('${pokemonLists[index]['name']}'),
+                  );
+                },
+              ),
+            ),
+          ],
+        ));
   }
 }
