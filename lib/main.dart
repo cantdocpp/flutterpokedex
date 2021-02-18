@@ -8,7 +8,6 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pokedex Apps',
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),

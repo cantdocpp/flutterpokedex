@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pokedex Apps'),
+        title: Text('Pokedex App'),
         centerTitle: true,
       ),
       body: new PokemonList(),
